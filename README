@@ -1,8 +1,3 @@
-POPA CATALINA-ELENA, 325 CA
-
-- I uploaded the first stage code.
-- I added the new fields for the entities and updated the input/output classes and related files.
-
 - "fileio" package contains reading (-> for loading the database) and writing classes.
 - Server class loads the database and starts the simulation.
 
