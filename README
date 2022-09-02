@@ -1,0 +1,28 @@
+POPA CATALINA-ELENA, 325 CA
+
+- I uploaded the first stage code.
+- I added the new fields for the entities and updated the input/output classes and related files.
+
+- "fileio" package contains reading (-> for loading the database) and writing classes.
+- Server class loads the database and starts the simulation.
+
+- Simulation class executes the actions for each year through the Year class as
+ it follows:
+    - excepting the initial year, the annual changes are added to the database
+    by the DatabaseUpdate class
+    - the age category is calculated for every child (in Year class)
+    - the average score is calculated through a strategy design pattern based on every
+    child's age category. (in Year class through "averagescore" package)
+    - every child's elf is checked and its color determines if the child's assigned budget
+    should be higher or lower (for BLACK/PINK elves) (in Elf class)
+    - the utility classes from "gifts" package share gifts to children based on the strategy
+    given in the input, through a strategy design pattern
+    - for every child that has a YELLOW elf, its received gifts list is checked and if it is
+    empty, the code is looking for a gift to give to the child (in Elf class)
+    - at the end of every year, the data for children is uploaded to final output
+
+- Database and Server -> singleton
+- I used Factory and Strategy design patterns for calculating the average score
+starting with Year 1. (-> averagescore package)
+- I also used Factory and Strategy design patterns for choosing the strategy for sharing gifts
+- I used Builder design pattern for Child class
